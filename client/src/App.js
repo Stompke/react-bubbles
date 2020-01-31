@@ -12,7 +12,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <p>hi</p>
         <Route exact path="/" component={Login} />
         {/* 
           Build a PrivateRoute component that will 

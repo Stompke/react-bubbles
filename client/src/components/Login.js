@@ -43,7 +43,6 @@ render() {
   return (
     <>
       <h1>Welcome to the Bubble App!</h1>
-      <p>Build a login page here</p>
       <form onSubmit={this.submitLogin}>
         <input value={this.state.credentials.username} type='text' placeholder='username' name='username' onChange={this.onChangeHandler} />
         <input value={this.state.credentials.password} type='password' placeholder='password' name='password' onChange={this.onChangeHandler} />

@@ -4,28 +4,24 @@ import { shallow } from 'enzyme';
 
 import BubblePage from './BubblePage';
 import App from '../App';
+import Login from './Login';
 
-
-test('this is my first test', () => {
-
-
-    const { getByLabelText, getByText } = render(<BubblePage />);
-
-    getByText(/colors/i);
-
-
+describe('BubblePage Component', () => {
+    test('Loads <BubblePage />', () => {
+        const { getByLabelText, getByText } = render(<BubblePage />);
+        getByText(/colors/i);
+    })
 })
 
-describe('Addition', () => {
-    it('knows that 2 and 2 make 4', () => {
-      expect(2 + 2).toBe(4);
-    });
-  });
 
-  describe('App component', () => {
-    it('finds hi', () => {
-      const wrapper = shallow(<App />);
-      const text = wrapper.find('p').text();
-      expect(text).toEqual('hi');
+  describe('Login Component', () => {
+    it('finds Welcome text', () => {
+        // const wrapper = shallow(<App />);
+        // const text = wrapper.find('p').text();
+        // expect(text).toEqual('hi');
+        
+        const newWrapper = shallow(<Login />)
+        const text = newWrapper.find('h1').text();
+        expect(text).toEqual('Welcome to the Bubble App!');
     });
   });
