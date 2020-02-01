@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios';
 
-
+let number = 1;
 // import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 class Login extends React.Component  {
@@ -39,15 +39,24 @@ class Login extends React.Component  {
     })
   }
 
+  add = () => {
+    number = number + 1;
+  }
+
 render() {
   return (
     <>
       <h1>Welcome to the Bubble App!</h1>
+      <li data-testid="color-item">data test id</li>
+
       <form onSubmit={this.submitLogin}>
         <input value={this.state.credentials.username} type='text' placeholder='username' name='username' onChange={this.onChangeHandler} />
         <input value={this.state.credentials.password} type='password' placeholder='password' name='password' onChange={this.onChangeHandler} />
         <button type='submit'>login</button>
       </form>
+
+      <button >click</button>
+      <p>{number}</p>
 
     </>
   );
